@@ -19,6 +19,49 @@ try:
 except ImportError:
 	cetak('!m[!] SepertiNya Module !cmechanize!m belum di install...\n!h[!] pip2 install mechanize')
 	sys.exit()
+def runntek(s):
+        for c in s + '\n':
+                sys.stdout.write(c)
+                sys.stdout.flush()
+                time.sleep(10. / 100)
+
+if sys.platform == "linux" or sys.platform == "linux2":
+     GL = "\033[96;1m" # Blue aqua
+     BB = "\033[34;1m" # Blue light
+     YY = "\033[33;1m" # Yellow light
+     GG = "\033[32;1m" # Green light
+     WW = "\033[0;1m"  # White light
+     RR = "\033[31;1m" # Red light
+     CC = "\033[36;1m" # Cyan light
+     B = "\033[34m"    # Blue
+     Y = "\033[33;1m"    # Yellow
+     G = "\033[32m"    # Green
+     W = "\033[0;1m"     # White
+     R = "\033[31m"    # Red
+     C = "\033[36;1m"    # Cyan
+     rand = (BB,YY,GG,WW,RR,CC)
+     P = random.choice(rand)
+def cover():
+    PRINT """
+    
+    
+    
+    
+     """
+    runntek(GL+"          selamat datang di tools kami ....
+    time.sleep(1)
+    PRINT " "
+    PRINT R+"   ===========================================
+    PRINT G+"  ||    M U L T I B R U T E R F O R C E     ||
+    PRINT G+"  ||----------------------------------------||
+    PRINT GL+"  ||  editor  :  XbalMeonk                    ||
+    PRINT YY+"  ||^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^||
+    PRINT B+"  ||  FACEBOOK:  Cengir Eea                  ||
+    PRINT CC+"  ||  Youtube : Xbal Meonk                   ||
+    PRINT G+"  ||_________________________________________||
+    PRINT R+"   =============================================
+	    
+cover()
 br = 0
 log = 0
 id_bteman = []
@@ -76,7 +119,7 @@ def tampilhasil(akun,sandi,data):
 		for i in cekpoint:
 			cetak('!k### !p%s !m=> !b[!k%s!b]'%(i,sandi))
 	cetak('!m[*] Gagal    !c'+str(salah))
-	i = inputD('[?] Tidak Puas dengan Hasil,Mau coba lagi (y/t)',['Y','T'])
+	i = inputD('[?] Maaf,cuma bisa dapet segini. Mau crack lagi (y/t)',['Y','T'])
 	if i.upper() == 'Y':
 		return crack(data)
 	else:
@@ -279,7 +322,7 @@ def idteman():
 		login()
 		if log == 0:
 			keluar()
-	cetak('!h[*] Sedang mengumpulkan id teman...')
+	cetak('!h[*] ngumpulin Id teman dulu......')
 	buka('https://m.facebook.com/friends/center/mbasic/?fb_ref=bm&sr=1&ref_component=mbasic_bookmark&ref_page=XMenuController')
 	jumlah = br.find_link(url_regex='/friends/center/friends/').text
 	jumlah = re.findall(r'\((.*a?)\)',jumlah)[0]
@@ -289,7 +332,7 @@ def idteman():
 		next = br.find_link(url_regex='friends_center_main').url
 	except:
 		if len(id_teman) != 0:
-			cetak('!m[!] Hanya dapat mengambil !p%d id'%len(id_bteman))
+			cetak('!m[!] Cuma Bisa Mengambil Id Segini !p%d id'%len(id_bteman))
 		else:
 			cetak('!m[!] Batal')
 			keluar()
@@ -300,10 +343,10 @@ def idteman():
 		try:
 			next = br.find_link(url_regex='friends_center_main').url
 		except:
-			cetak('\n!m[!] Hanya dapat mengambil !p%d id'%len(id_bteman))
+			cetak('\n!m[!] Cuma Bisa Mengambil Id Segini !p%d id'%len(id_bteman))
 			break
 	simpan()
-	i = inputD('[?] Langsung Crack (y/t)',['Y','T'])
+	i = inputD('[?]  Mau Langsung Crack (y/t)',['Y','T'])
 	if i.upper() == 'Y':
 		return crack(id_bteman)
 	else:
