@@ -1,3 +1,4 @@
+#!/bin/env python3
 import platform,os,sys
 def cetak(x,e=0):
 	w = 'mhkbpcP'
